@@ -25,11 +25,11 @@ function setup() {
 
 	Engine.run(engine);
 
-	bob1 = new Bob(200,550);
-	bob2 = new Bob(300,550);
-	bob3 = new Bob(400,550);
-	bob4 = new Bob(500,550);
-	bob5 = new Bob(600,550);
+	bob1 = new Bob(200,550,(0,175,175));
+	bob2 = new Bob(300,550,(0,175,175));
+	bob3 = new Bob(400,550,(0,175,175));
+	bob4 = new Bob(500,550,(0,175,175));
+	bob5 = new Bob(600,550,(0,175,175));
 
 	support = new Support(400,200,500,20);
 
@@ -64,17 +64,22 @@ bob4.display();
 bob5.display();
 
 
-if(keyDown("up")){
+/*if(keyDown("up")){
 	
 	Matter.Body.applyForce(bob5.body,bob5.body.position,{x:400,y:400});
 
-}
+}*/
 
 	
 
   drawSprites();
  
 }
+
+function mouseDragged(){
+	Matter.Body.setPosition(bob5.body,{x:mouseX,y:mouseY})
+}
+
 
 
 
